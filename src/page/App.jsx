@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
-import Quiz from "./Quiz";
-import { useNavigate, useNavigation } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 function App() {
   const [category, setCategory] = useState([]);
@@ -36,7 +35,7 @@ function App() {
       <div className="flex flex-col items-center justify-center min-h-screen bg-gradient-to-br from-indigo-500 via-purple-500 to-pink-500 text-white px-4">
         {/* App Title */}
         <h1 className="text-4xl md:text-6xl font-extrabold mb-4 drop-shadow-lg">
-          Quizify
+          Quiz-Whiz
         </h1>
 
         {/* Tagline */}
@@ -48,7 +47,7 @@ function App() {
         {/* Start Button */}
         <button
           onClick={handleQuiz}
-          className="px-6 py-3 bg-white text-indigo-600 font-semibold text-lg rounded-xl shadow-md hover:bg-indigo-100 transition-all"
+          className="px-6 py-3 bg-white text-indigo-600 cursor-pointer font-semibold text-lg rounded-xl shadow-md hover:bg-indigo-100 transition-all"
         >
           Start Quiz
         </button>

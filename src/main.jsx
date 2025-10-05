@@ -10,12 +10,14 @@ import {
 } from "react-router-dom";
 import Quiz from "./page/Quiz.jsx";
 import Layout from "./Layout.jsx";
+import Result from "./page/Result.jsx";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path="/" element={<Layout />}>
       <Route path="" element={<App />} />
       <Route path="/quiz" element={<Quiz />} />
+      <Route path="/result" element={<Result />} />
     </Route>
   )
 );

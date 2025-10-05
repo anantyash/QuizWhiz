@@ -1,5 +1,14 @@
-export default function Result({ score, total, restartQuiz }) {
-  const percentage = Math.round((score / total) * 100);
+import { use } from "react";
+import { useLocation, useNavigate } from "react-router-dom";
+
+export default function Result() {
+  const navigate = useNavigate();
+  const location = useLocation();
+  const { score } = location.state || { score: 0 };
+  const percentage = Math.round((score / 10) * 100);
+  const restartQuiz = () => {
+    navigate("/");
+  };
 
   return (
     <div className="flex flex-col items-center justify-center min-h-screen bg-gradient-to-br from-green-400 via-emerald-500 to-teal-600 text-white px-4">
@@ -10,9 +19,7 @@ export default function Result({ score, total, restartQuiz }) {
 
       {/* Score Summary */}
       <div className="bg-white text-gray-800 shadow-lg rounded-xl p-6 w-full max-w-md text-center">
-        <p className="text-2xl font-semibold mb-2">
-          Your Score: {score} / {total}
-        </p>
+        <p className="text-2xl font-semibold mb-2">Your Score: {score} / 10</p>
         <p className="text-lg font-medium mb-4">Accuracy: {percentage}%</p>
 
         {/* Feedback Message */}
